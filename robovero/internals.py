@@ -65,6 +65,7 @@ def robocaller(function, ret_type, *args):
       search_string = "search " + function + "\r\n"
       robovero.debug.write("[%f] ADD TO DICTIONARY: %s\r\n" % (time.time() - robovero.start_time, function))
       robovero.serial.write(search_string)
+      time.sleep(0.001)
       ret = getReturn()
       robovero.debug.write("[%f] INDEX: %s\r\n" % (time.time() - robovero.start_time, ret))
       robovero.indices[function] = ret
